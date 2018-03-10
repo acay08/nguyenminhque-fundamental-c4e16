@@ -9,9 +9,9 @@ for i in range(10):
 
 
 n = int(input('Enter a number: '))
-if n % 2 == 0:
-    for i in range(n):
-        if i % 2 == 0:
+for i in range(n):
+    for j in range(n):
+        if (i+j) % 2 == 0:
             print('1  0  ' * int(n/2), end='')
         else:
             print('0  1  ' * int(n/2), end='')
