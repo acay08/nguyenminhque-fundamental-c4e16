@@ -2,20 +2,27 @@ from random import choice
 
 n = list('champion')
 
-random_word = choice(n)
 len_of_champion = len(n)
 
 new_word = []
-new_word.append(random_word)
-len_of_new_word = len(new_word)
+rand_word = choice(n)
 
-playing = True
+new_word.append(rand_word)
+
 while True:
-    random_word = choice(n)
-    for i in range(len_of_new_word):
-        while random_word == new_word[i]:
-            break
-    new_word.append(random_word)
+    rand_word = choice(n)
+    while rand_word in new_word:
+        break
+    while rand_word not in new_word:
+        new_word.append(rand_word)
+        break
+    len_of_new_word = len(new_word)
     if len_of_new_word == len_of_champion:
         break
 print(new_word)
+
+your_answer = input('your answer: ')
+if your_answer == 'champion':
+    print('Bingo')
+else:
+    print(':(')
